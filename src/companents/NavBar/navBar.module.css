@@ -1,0 +1,21 @@
+.nav{
+    grid-area:n;
+    background-color: aqua;
+    padding: 20px;
+
+}
+
+.item{
+    color: darkgoldenrod;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+.item a{
+    color: white;
+    text-decoration: none;
+}
+.item[aria-current="page"] {
+    color: gold;
+    font-weight: bold;
+}
