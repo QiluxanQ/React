@@ -34,7 +34,6 @@ let intialState = {
                     default:
                         return state;
         }
-    return state;
 }
 
 export const addPostActionCreator = () => {

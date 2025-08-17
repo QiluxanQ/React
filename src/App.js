@@ -4,7 +4,6 @@ import NavBar from "./companents/NavBar/navBar";
 import Profile from "./companents/Profile/Profile";
 import {Route, Routes} from "react-router-dom";
 import DialogsContainer from "./companents/Dialogs/Messages/DialogContainer";
-import Users from "./companents/Users/Users";
 import UsersContainer from "./companents/Users/UsersContainer";
 
 const App = (props) => {

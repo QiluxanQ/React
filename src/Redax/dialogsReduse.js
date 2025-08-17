@@ -34,7 +34,6 @@ export const dialogsReduse = (state = intialState, action) => {
         default:
             return state;
     }
-    return state;
 }
 export const sendMessagesCreator = () => {
     return {
