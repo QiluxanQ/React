@@ -6,7 +6,7 @@ import {Route, Routes} from "react-router-dom";
 import DialogsContainer from "./companents/Dialogs/Messages/DialogContainer";
 import UsersContainer from "./companents/Users/UsersContainer";
 
-const App = (props) => {
+const App = () => {
 
     return (
 
