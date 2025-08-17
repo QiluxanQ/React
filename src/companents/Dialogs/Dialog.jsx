@@ -2,7 +2,6 @@ import s from './Dialogs.module.css'
 import DialogItem from "./DialogItem/DialogItem";
 import Messages from "./Messages/Message";
 import React from "react"
-    import {sendMessagesCreator, updateNewMessagesTextCreater} from "../../Redax/dialogsReduse";
 
 const Dialogs = (props) => {
 
@@ -13,15 +12,14 @@ const Dialogs = (props) => {
     }
 
     let onNewMessagesChencge = (e) => {
-             let body =  e.target.value
-            props.updateNewMessagesTextCreater(body)
+        let body = e.target.value
+        props.updateNewMessagesTextCreater(body)
 
     }
 
 
-
-    let dialogsElements = state.dialogs.map(dialog => <DialogItem name = {dialog.name} key={dialog.id} id = {dialog.id} /> )
-    let messagesElements = state.messages.map(message => <Messages messages={message.message} key={message.id}  /> )
+    let dialogsElements = state.dialogs.map(dialog => <DialogItem name={dialog.name} key={dialog.id} id={dialog.id}/>)
+    let messagesElements = state.messages.map(message => <Messages messages={message.message} key={message.id}/>)
     let newMessageBody = state.newMessagesBody
 
 
@@ -34,7 +32,7 @@ const Dialogs = (props) => {
                 </div>
             </div>
             <div className={s.messages}>
-                {messagesElements }
+                {messagesElements}
             </div>
             <textarea value={newMessageBody} onChange={onNewMessagesChencge}></textarea>
             <div>

@@ -1,53 +1,50 @@
 const updateNewMessageText = 'updateNewMessageText';
 const sendMessages = 'sendMessages';
 
-let intialState =  {
-        messages: [
-            {id: 1, message: 'Hello'},
-            {id: 2, message: 'Wrld'},
-            {id: 3, message: 'World'},
-        ],
-        dialogs: [
-            {id: 1, name: 'ila'},
-            {id: 2, name: 'World'},
-            {id: 3, name: 'World'},
-        ],
-        newMessagesBody: ''
-    }
+let intialState = {
+    messages: [
+        {id: 1, message: 'Hello'},
+        {id: 2, message: 'Wrld'},
+        {id: 3, message: 'World'},
+    ],
+    dialogs: [
+        {id: 1, name: 'ila'},
+        {id: 2, name: 'World'},
+        {id: 3, name: 'World'},
+    ],
+    newMessagesBody: ''
+}
 
 export const dialogsReduse = (state = intialState, action) => {
-    let stateCopy = {
-        ...state,
-        // messages:[...state.messages]
-    };
-
-
 
     switch (action.type) {
-        case "updateNewMessageText": {
-            stateCopy.newMessagesBody = action.body;
-            return stateCopy;
-        }
-        case "sendMessages": {
+        case "updateNewMessageText":
+            return {
+                ...state,
+                newMessagesBody: action.body
+            };
+        case "sendMessages":
             let body = state.newMessagesBody;
-            stateCopy.newMessagesBody = ''
-            stateCopy.messages.push({id: 4, message: body})
-            return stateCopy;
-        }
+            return {
+                ...state,
+                newMessagesBody: '',
+                messages: [...state.messages, {id: 4, message: body}]
+            };
+
         default:
             return state;
     }
     return state;
 }
 export const sendMessagesCreator = () => {
-    return{
+    return {
         type: sendMessages,
     }
 }
 export const updateNewMessagesTextCreater = (body) => {
-    return{
+    return {
         type: updateNewMessageText,
-        body:body
+        body: body
     }
 }
 export default dialogsReduse;

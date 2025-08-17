@@ -10,6 +10,10 @@
     font-family: 'Courier New', Courier, monospace;
     font-size: 20px;
 }
+.item:hover{
+    color: darkgoldenrod;
+}
+
 
 .item a{
     color: white;
